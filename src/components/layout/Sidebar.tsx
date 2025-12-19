@@ -3,34 +3,38 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Bomb, Terminal, Activity, FileText, Settings, Shield, BookOpen, Building, ScrollText, WifiOff, CheckSquare, Database, ShieldCheck, HeartPulse, Brain, MessageSquare, Gauge } from 'lucide-react';
+import { LayoutDashboard, Bomb, Terminal, Activity, FileText, Settings, Shield, BookOpen, Building, ScrollText, WifiOff, CheckSquare, Database, ShieldCheck, HeartPulse, Brain, MessageSquare, Gauge, Target } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
 const menuItems = [
-    { label: 'Dashboard', icon: LayoutDashboard, href: '/' },
-    { label: 'Scenarios', icon: Bomb, href: '/scenarios' },
-    { label: 'Execution', icon: Terminal, href: '/execution' },
-    { label: 'Analysis', icon: Activity, href: '/analysis' },
-    { label: 'Reports', icon: FileText, href: '/reports' },
-    { label: 'Knowledge Base', icon: BookOpen, href: '/knowledge-base' },
-    { label: 'Policies', icon: Shield, href: '/policies' },
-    { label: 'Settings', icon: Settings, href: '/settings' },
+    { label: '대시보드', icon: LayoutDashboard, href: '/' },
+    { label: '시나리오 관리', icon: Bomb, href: '/scenarios' },
+    { label: '공격 실행', icon: Terminal, href: '/execution' },
+    { label: '취약점 분석', icon: Activity, href: '/analysis' },
+    { label: '리포트', icon: FileText, href: '/reports' },
+    { label: '공격 지식베이스', icon: BookOpen, href: '/knowledge-base' },
+    { label: '정책 관리', icon: Shield, href: '/policies' },
+    { label: '설정', icon: Settings, href: '/settings' },
 ];
 
 const aiItems = [
-    { label: 'AI Red Teaming', icon: Brain, href: '/ai-redteaming' },
-    { label: 'Prompt Lab', icon: MessageSquare, href: '/prompt-lab' },
-    { label: 'AI Safety', icon: Gauge, href: '/ai-safety' },
+    { label: 'AI 레드티밍', icon: Brain, href: '/ai-redteaming' },
+    { label: '공격 엔진', icon: Target, href: '/ai-redteaming/attack-engine' },
+    { label: '프롬프트 실험실', icon: MessageSquare, href: '/prompt-lab' },
+    { label: 'AI 안전성 평가', icon: Gauge, href: '/ai-safety' },
 ];
 
 const adminItems = [
-    { label: 'Approvals', icon: CheckSquare, href: '/admin/approvals' },
-    { label: 'Tenants', icon: Building, href: '/admin/tenants' },
-    { label: 'Compliance', icon: ShieldCheck, href: '/admin/compliance' },
-    { label: 'Data Lifecycle', icon: Database, href: '/admin/data-lifecycle' },
-    { label: 'Audit Logs', icon: ScrollText, href: '/admin/audit-logs' },
-    { label: 'Offline Mode', icon: WifiOff, href: '/admin/offline' },
-    { label: 'System Health', icon: HeartPulse, href: '/admin/system-health' },
+    { label: '실행 승인', icon: CheckSquare, href: '/admin/approvals' },
+    { label: '테넌트 관리', icon: Building, href: '/admin/tenants' },
+    { label: 'ERD/데이터 모델', icon: Database, href: '/admin/erd' },
+    { label: 'API 문서', icon: FileText, href: '/admin/api-docs' },
+    { label: '테스트 현황', icon: Activity, href: '/admin/tests' },
+    { label: '시드데이터', icon: Database, href: '/admin/seed-data' },
+    { label: '규정 준수', icon: ShieldCheck, href: '/admin/compliance' },
+    { label: '감사 로그', icon: ScrollText, href: '/admin/audit-logs' },
+    { label: '오프라인 설정', icon: WifiOff, href: '/admin/offline' },
+    { label: '시스템 상태', icon: HeartPulse, href: '/admin/system-health' },
 ];
 
 export default function Sidebar() {
