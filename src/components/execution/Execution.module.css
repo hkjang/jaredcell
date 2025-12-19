@@ -1,0 +1,327 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--header-height) - 48px);
+    /* Full height minus header/padding */
+    gap: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+}
+
+.controlBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btnStart {
+    background: var(--success);
+    color: #000;
+}
+
+.btnStart:hover {
+    background: #00e673;
+}
+
+.btnStop {
+    background: rgba(255, 46, 46, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.btnStop:hover {
+    background: rgba(255, 46, 46, 0.2);
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+    /* Important for scroll in flex/grid */
+}
+
+/* Job List (Left Panel) */
+.jobList {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.jobListHeader {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.jobItems {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.jobItem {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.jobItem:hover {
+    background: var(--bg-card-hover);
+}
+
+.jobItemActive {
+    background: rgba(0, 229, 255, 0.05);
+    /* Highlight active selection */
+    border-left: 3px solid var(--primary);
+}
+
+.jobTitle {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.jobMeta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+.progressBar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+/* Detail View (Right Panel) */
+.executorPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 0;
+}
+
+.agentVisualizer {
+    flex: 0 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.agentState {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.agentAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.agentAvatar::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    border: 2px solid rgba(219, 39, 119, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.agentInfo h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.agentInfo p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.decisionTree {
+    display: flex;
+    gap: 12px;
+}
+
+.decisionNode {
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+}
+
+.nodeActive {
+    background: rgba(0, 229, 255, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Terminal */
+.terminalContainer {
+    flex: 1;
+    background: #0f0f0f;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.terminalHeader {
+    background: #1a1a1a;
+    padding: 8px 16px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.terminalDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dotRed {
+    background: #ff5f56;
+}
+
+.dotYellow {
+    background: #ffbd2e;
+}
+
+.dotGreen {
+    background: #27c93f;
+}
+
+.terminalTitle {
+    margin-left: 8px;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.terminalBody {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    color: #d4d4d4;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.logLine {
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.logTime {
+    color: #666;
+    margin-right: 12px;
+    user-select: none;
+}
+
+.logInfo {
+    color: #4ec9b0;
+}
+
+.logWarn {
+    color: #ce9178;
+}
+
+.logError {
+    color: #f44747;
+}
+
+.logSuccess {
+    color: #b5cea8;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background: #d4d4d4;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}

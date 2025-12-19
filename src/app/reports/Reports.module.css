@@ -1,0 +1,96 @@
+/* Report Styles */
+.reportGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+.reportHeader {
+    grid-column: span 12;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reportTitle h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.metricCard {
+    grid-column: span 3;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.metricCard:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.metricValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 12px 0;
+    color: var(--text-primary);
+}
+
+.chartContainer {
+    grid-column: span 6;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-tertiary);
+}
+
+/* Technical Report Specifics */
+.techLogContainer {
+    grid-column: span 12;
+    background: #0f0f0f;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    font-family: monospace;
+}
+
+/* Tenant Management (Admin) */
+.tenantTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.tenantRow {
+    background: var(--bg-card);
+}
+
+.tenantCell {
+    padding: 16px;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.tenantCell:first-child {
+    border-top-left-radius: var(--radius-sm);
+    border-bottom-left-radius: var(--radius-sm);
+    border-left: 1px solid var(--border-subtle);
+}
+
+.tenantCell:last-child {
+    border-top-right-radius: var(--radius-sm);
+    border-bottom-right-radius: var(--radius-sm);
+    border-right: 1px solid var(--border-subtle);
+}

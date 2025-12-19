@@ -1,0 +1,174 @@
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+.welcomeSection {
+    grid-column: span 12;
+    margin-bottom: 24px;
+}
+
+.welcomeTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.welcomeSubtitle {
+    color: var(--text-secondary);
+}
+
+.riskCard {
+    grid-column: span 4;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.riskCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--danger), var(--primary));
+}
+
+.riskScore {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--danger), #ff8f00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.riskLabel {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.statCard {
+    grid-column: span 2;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.statLabel {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.feedSection {
+    grid-column: span 6;
+    grid-row: span 2;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sectionTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.feedList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feedItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.feedItem:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-subtle);
+}
+
+.feedInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feedStatus {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.statusCritical {
+    background: var(--danger);
+    box-shadow: 0 0 8px var(--danger);
+}
+
+.statusHigh {
+    background: #ff8f00;
+}
+
+.statusSafe {
+    background: var(--success);
+}
+
+.feedTime {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+@media (max-width: 1024px) {
+
+    .riskCard,
+    .feedSection {
+        grid-column: span 12;
+    }
+
+    .statCard {
+        grid-column: span 6;
+    }
+}
