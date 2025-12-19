@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Bomb, Terminal, Activity, FileText, Settings, Shield, BookOpen, Building, ScrollText, WifiOff, CheckSquare, Database, ShieldCheck, HeartPulse, Brain, MessageSquare, Gauge, Target } from 'lucide-react';
+import { LayoutDashboard, Bomb, Terminal, Activity, FileText, Settings, Shield, BookOpen, Building, ScrollText, WifiOff, CheckSquare, Database, ShieldCheck, HeartPulse, Brain, MessageSquare, Gauge, Target, Package, HelpCircle, BarChart3, Map } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
 const menuItems = [
@@ -15,6 +15,7 @@ const menuItems = [
     { label: '공격 지식베이스', icon: BookOpen, href: '/knowledge-base' },
     { label: '정책 관리', icon: Shield, href: '/policies' },
     { label: '설정', icon: Settings, href: '/settings' },
+    { label: '도움말', icon: HelpCircle, href: '/help' },
 ];
 
 const aiItems = [
@@ -27,10 +28,13 @@ const aiItems = [
 const adminItems = [
     { label: '실행 승인', icon: CheckSquare, href: '/admin/approvals' },
     { label: '테넌트 관리', icon: Building, href: '/admin/tenants' },
+    { label: '사이트 맵', icon: Map, href: '/sitemap-view' },
     { label: 'ERD/데이터 모델', icon: Database, href: '/admin/erd' },
     { label: 'API 문서', icon: FileText, href: '/admin/api-docs' },
     { label: '테스트 현황', icon: Activity, href: '/admin/tests' },
+    { label: 'SLA/성능', icon: BarChart3, href: '/admin/sla' },
     { label: '시드데이터', icon: Database, href: '/admin/seed-data' },
+    { label: '배포 관리', icon: Package, href: '/admin/deployment' },
     { label: '규정 준수', icon: ShieldCheck, href: '/admin/compliance' },
     { label: '감사 로그', icon: ScrollText, href: '/admin/audit-logs' },
     { label: '오프라인 설정', icon: WifiOff, href: '/admin/offline' },
